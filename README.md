@@ -6,20 +6,20 @@ Identify default patterns based on demographics, credit usage, and payment behav
 Explore key predictors of default risk, including payment history and billing amounts.
 
 ## Steps Taken
-1. Data Importation and Preparation
+### 1. Data Importation and Preparation
 - The dataset was imported into Google BigQuery.
 - Initial data cleansing included removing duplicates, handling NULL values, and formatting date fields for consistency.
-2. SQL Analysis
+### 2. SQL Analysis
 - Demographic Distribution: Assessed age, education, marital status, and gender distributions among credit card holders.
 - Credit Limit Analysis: Analyzed credit limit distribution (LIMIT_BAL) and identified common credit amounts among clients.
 - Default Behavior by Demographics: Examined default patterns based on education and marital status to identify high-risk groups.
 - Payment History Exploration: Reviewed historical payment statuses (e.g., PAY_0, PAY_2, etc.) to understand trends in delayed payments.
 - Billing and Payment Amounts: Analyzed recent billing amounts and payments to assess financial stability and risk trends.
-3. Insights Gained
+### 3. Insights Gained
 - Noted significant differences in default rates across demographic groups.
 - Observed that higher credit limits correlated with lower default rates for certain demographics.
 - Identified that consistent payment delays were strong predictors of default.
-4. Future Steps
+### 4. Future Steps
 - Visualization: Plan to create visual dashboards in Power BI for interactive exploration.
 - Modeling: Explore machine learning models to predict default risk based on key features.
 
