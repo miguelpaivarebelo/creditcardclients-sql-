@@ -20,13 +20,13 @@ Noted significant differences in default rates across demographic groups.
 Observed that higher credit limits correlated with lower default rates for certain demographics.
 Identified that consistent payment delays were strong predictors of default.
 4. Future Steps
-Visualization: Plan to create visual dashboards in Power BI for interactive exploration.
-Modeling: Explore machine learning models to predict default risk based on key features.
+- Visualization: Plan to create visual dashboards in Power BI for interactive exploration.
+- Modeling: Explore machine learning models to predict default risk based on key features.
 
 ## Technologies Used
-SQL: For data querying, aggregation, and analysis.
-Google BigQuery: Managed storage and processing of the dataset.
-Power BI (planned): For visualizing results and enhancing interpretability.
+- SQL: For data querying, aggregation, and analysis.
+- Google BigQuery: Managed storage and processing of the dataset.
+- Power BI (planned): For visualizing results and enhancing interpretability.
 
 ## Dataset Details
 - Source: UCI Machine Learning Repository
