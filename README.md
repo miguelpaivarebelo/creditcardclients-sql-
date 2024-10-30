@@ -16,9 +16,9 @@ Explore key predictors of default risk, including payment history and billing am
 - Payment History Exploration: Reviewed historical payment statuses (e.g., PAY_0, PAY_2, etc.) to understand trends in delayed payments.
 - Billing and Payment Amounts: Analyzed recent billing amounts and payments to assess financial stability and risk trends.
 3. Insights Gained
-Noted significant differences in default rates across demographic groups.
-Observed that higher credit limits correlated with lower default rates for certain demographics.
-Identified that consistent payment delays were strong predictors of default.
+- Noted significant differences in default rates across demographic groups.
+- Observed that higher credit limits correlated with lower default rates for certain demographics.
+- Identified that consistent payment delays were strong predictors of default.
 4. Future Steps
 - Visualization: Plan to create visual dashboards in Power BI for interactive exploration.
 - Modeling: Explore machine learning models to predict default risk based on key features.
