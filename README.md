@@ -1,7 +1,7 @@
 # Credit Card Default Prediction Analysis
 This project focuses on understanding the factors influencing credit card default risk. Using SQL queries in Google BigQuery, we analyze a dataset from UCI Machine Learning Repository with 30,000 client records detailing demographic information, credit limits, payment history, and more.
 
-##Objectives
+## Objectives
 Identify default patterns based on demographics, credit usage, and payment behaviors.
 Explore key predictors of default risk, including payment history and billing amounts.
 
