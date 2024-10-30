@@ -29,5 +29,5 @@ Google BigQuery: Managed storage and processing of the dataset.
 Power BI (planned): For visualizing results and enhancing interpretability.
 
 ## Dataset Details
-Source: UCI Machine Learning Repository
-Attributes: Includes client demographics, credit limit (LIMIT_BAL), payment history (PAY_0 to PAY_6), billing (BILL_AMT1 to BILL_AMT6), and default indication (default_payment_next_month).
+- Source: UCI Machine Learning Repository
+- Attributes: Includes client demographics, credit limit (LIMIT_BAL), payment history (PAY_0 to PAY_6), billing (BILL_AMT1 to BILL_AMT6), and default indication (default_payment_next_month).
