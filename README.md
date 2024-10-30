@@ -7,8 +7,8 @@ Explore key predictors of default risk, including payment history and billing am
 
 ## Steps Taken
 1. Data Importation and Preparation
-The dataset was imported into Google BigQuery.
-Initial data cleansing included removing duplicates, handling NULL values, and formatting date fields for consistency.
+- The dataset was imported into Google BigQuery.
+- Initial data cleansing included removing duplicates, handling NULL values, and formatting date fields for consistency.
 2. SQL Analysis
 Demographic Distribution: Assessed age, education, marital status, and gender distributions among credit card holders.
 Credit Limit Analysis: Analyzed credit limit distribution (LIMIT_BAL) and identified common credit amounts among clients.
