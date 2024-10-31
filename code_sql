@@ -1,0 +1,146 @@
+##VISUAL OF THE FIRST LINES
+SELECT * FROM `credit-card-440112.credit_card.credit_card` LIMIT 10
+
+##DISTRIBUITION OF THE CREDIT LIMIT
+SELECT LIMIT_BAL, COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY LIMIT_BAL
+ORDER BY count DESC
+LIMIT 10;
+
+##AGE DISTRIBUITION
+SELECT AGE, COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY AGE
+ORDER BY count DESC;
+
+##LATE PAYMENT DISTRIBUITION
+SELECT PAY_0, COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY PAY_0
+ORDER BY count DESC;
+
+##CREDIT LIMIT VS PAYMENT VALUE
+SELECT 
+    LIMIT_BAL, 
+    AVG(PAY_AMT1) AS avg_pay_amt1, 
+    AVG(PAY_AMT2) AS avg_pay_amt2
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY LIMIT_BAL
+ORDER BY LIMIT_BAL;
+
+##LATE PAYMENT BY AGE GAPS
+SELECT 
+    CASE 
+        WHEN AGE BETWEEN 20 AND 29 THEN '20-29'
+        WHEN AGE BETWEEN 30 AND 39 THEN '30-39'
+        WHEN AGE BETWEEN 40 AND 49 THEN '40-49'
+        WHEN AGE BETWEEN 50 AND 59 THEN '50-59'
+        ELSE '60+'
+    END AS age_range,
+    COUNT(CASE WHEN PAY_0 > 0 THEN 1 END) AS late_payers,
+    COUNT(*) AS total_payers,
+    ROUND(COUNT(CASE WHEN PAY_0 > 0 THEN 1 END) / COUNT(*) * 100, 2) AS late_percentage
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY age_range
+ORDER BY age_range;
+
+##CIVIL STATE VS LATE PAYMENTS
+SELECT 
+    MARRIAGE,
+    COUNT(CASE WHEN PAY_0 > 0 THEN 1 END) AS late_payers,
+    COUNT(*) AS total_payers,
+    ROUND(COUNT(CASE WHEN PAY_0 > 0 THEN 1 END) / COUNT(*) * 100, 2) AS late_percentage
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY MARRIAGE
+ORDER BY late_percentage DESC;
+
+##EXPLORATY ANALYSIS
+##Total records
+SELECT COUNT(*) AS total_records 
+FROM `credit-card-440112.credit_card.credit_card`
+
+##BASIC STATISTICS
+SELECT 
+    AVG(LIMIT_BAL) AS avg_limit,
+    MIN(LIMIT_BAL) AS min_limit,
+    MAX(LIMIT_BAL) AS max_limit
+FROM 
+
+##CREDIT LIMI DISTRIBUITION BY SEX
+SELECT 
+    SEX,
+    AVG(LIMIT_BAL) AS avg_limit,
+    MIN(LIMIT_BAL) AS min_limit,
+    MAX(LIMIT_BAL) AS max_limit
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY SEX;
+
+##DISTRIBUITION BY AGE
+SELECT 
+    AGE,
+    COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY AGE
+ORDER BY AGE;
+
+##PROPORTION OF PAYMENT BY DAY VS NO PAYMENT
+SELECT 
+    default_payment_next_month,
+    COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY default_payment_next_month;
+
+##PAYMENT HISTORY ANALYSIS
+SELECT 
+    PAY_0,
+    COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY PAY_0
+ORDER BY PAY_0;
+
+SELECT 
+    PAY_2,
+    COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY PAY_2
+ORDER BY PAY_2;
+
+SELECT 
+    PAY_3,
+    COUNT(*) AS count
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY PAY_3
+ORDER BY PAY_3;
+
+##PAYMENT AMOUT ANALYSIS
+SELECT 
+    AVG(PAY_AMT1) AS avg_pay_amt1,
+    MIN(PAY_AMT1) AS min_pay_amt1,
+    MAX(PAY_AMT1) AS max_pay_amt1,
+    AVG(PAY_AMT2) AS avg_pay_amt2,
+    MIN(PAY_AMT2) AS min_pay_amt2,
+    MAX(PAY_AMT2) AS max_pay_amt2,
+    AVG(PAY_AMT3) AS avg_pay_amt3,
+    MIN(PAY_AMT3) AS min_pay_amt3,
+    MAX(PAY_AMT3) AS max_pay_amt3,
+    AVG(PAY_AMT4) AS avg_pay_amt4,
+    MIN(PAY_AMT4) AS min_pay_amt4,
+    MAX(PAY_AMT4) AS max_pay_amt4,
+    AVG(PAY_AMT5) AS avg_pay_amt5,
+    MIN(PAY_AMT5) AS min_pay_amt5,
+    MAX(PAY_AMT5) AS max_pay_amt5,
+    AVG(PAY_AMT6) AS avg_pay_amt6,
+    MIN(PAY_AMT6) AS min_pay_amt6,
+    MAX(PAY_AMT6) AS max_pay_amt6
+FROM `credit-card-440112.credit_card.credit_card`;
+
+##EDUCATION AND MARITAL STATUS
+SELECT 
+    EDUCATION,
+    MARRIAGE,
+    AVG(LIMIT_BAL) AS avg_limit_balance,
+    AVG(default_payment_next_month) AS avg_default_rate
+FROM `credit-card-440112.credit_card.credit_card`
+GROUP BY EDUCATION, MARRIAGE
+ORDER BY EDUCATION, MARRIAGE;
